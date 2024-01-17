@@ -2,50 +2,32 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string namePlayer = "";
-
-        int healthPlayer = 0;
-        int armorPlayer = 0;
-        int damagePlayer = 0;
-
-
-        Console.Write("Введите имя игрока: ");
-        namePlayer = Console.ReadLine();
-
-        Console.Write("Введите количество здоровья: ");
-        healthPlayer = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Введите количество брони: ");
-        armorPlayer = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Введите количество урона: ");
-        damagePlayer = Convert.ToInt32(Console.ReadLine());
-
-        Player player = new Player(namePlayer, healthPlayer, armorPlayer, damagePlayer);
+        Player player = new Player("Игрок", 1000, 100, 50);
 
         player.ShowInfoPlayer();
+
         Console.ReadKey();
     }
 }
 
 class Player
 {
-    public string Name;
-    public int Health; 
-    public int Armor;
-    public int Damage;
+    private string _name;
+    private int _health;
+    private int _armor;
+    private int _damage;
 
-    public Player (string name, int health, int armor, int damage)
+    public Player(string name, int health, int armor, int damage)
     {
-        Name = name;
-        Health = health;
-        Armor = armor;
-        Damage = damage;
+        _name = name;
+        _health = health;
+        _armor = armor;
+        _damage = damage;
     }
 
     public void ShowInfoPlayer()
     {
-        Console.WriteLine($"\nИгрок с именем - {Name}, имеет следующие параметры:\n");
-        Console.WriteLine($"Здоровье - {Health} единиц\nБроня - {Armor} единиц\nУрон - {Damage} единиц");
+        Console.WriteLine($"\nИгрок с именем - {_name}, имеет следующие параметры:\n");
+        Console.WriteLine($"Здоровье - {_health} единиц\nБроня - {_armor} единиц\nУрон - {_damage} единиц");
     }
 }
