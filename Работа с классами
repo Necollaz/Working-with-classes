@@ -4,7 +4,7 @@ internal class Program
     {
         Player player = new Player("Игрок", 1000, 100, 50);
 
-        player.ShowInfoPlayer();
+        player.ShowInfoParameter();
 
         Console.ReadKey();
     }
@@ -25,7 +25,7 @@ class Player
         _damage = damage;
     }
 
-    public void ShowInfoPlayer()
+    public void ShowInfoParameter()
     {
         Console.WriteLine($"\nИгрок с именем - {_name}, имеет следующие параметры:\n");
         Console.WriteLine($"Здоровье - {_health} единиц\nБроня - {_armor} единиц\nУрон - {_damage} единиц");
